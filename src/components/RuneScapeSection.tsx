@@ -318,14 +318,14 @@ export default function RuneScapeSection() {
                 </div>
 
                 {/* Click hint */}
-                <div style={{
+                <div className="osrs-hint-flash" style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
-                  color: "#8b6914",
+                  fontSize: 8,
+                  color: "#ffcc44",
                   textAlign: "center",
                   marginBottom: 8,
                 }}>
-                  [ Click to expand ]
+                  ▶ Click each year to expand ◀
                 </div>
 
                 {/* Level bars */}

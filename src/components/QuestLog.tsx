@@ -199,12 +199,12 @@ export default function QuestLog() {
             borderBottom: "1px solid #3d2b1f",
             textAlign: "center",
           }}>
-            <span style={{
+            <span className="osrs-hint-flash" style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 6,
-              color: "#8b6914",
+              fontSize: 8,
+              color: "#ffcc44",
             }}>
-              [ Click quest to expand · Check box to complete ]
+              ▶ Click quest to expand · Check box to complete ◀
             </span>
           </div>
           {quests.map((quest, i) => (

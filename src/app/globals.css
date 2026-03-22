@@ -148,6 +148,16 @@ a:hover {
   animation: osrs-blink 1s ease-in-out infinite;
 }
 
+/* Flashing hint text — draws attention to clickable areas */
+@keyframes osrs-hint-flash {
+  0%, 100% { opacity: 1; color: #ffcc44; }
+  40% { opacity: 0.2; color: #8b6914; }
+}
+
+.osrs-hint-flash {
+  animation: osrs-hint-flash 1.4s ease-in-out infinite;
+}
+
 /* Gentle pulse for primary buttons */
 @keyframes osrs-pulse {
   0%, 100% { transform: scale(1); }
