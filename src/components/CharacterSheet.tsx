@@ -175,13 +175,18 @@ export default function CharacterSheet() {
                 padding: 4,
                 textAlign: "center",
               }}>
-                <Image
-                  src="/shayaan.jpg"
-                  alt="Shayaan"
-                  width={80}
-                  height={80}
-                  style={{ imageRendering: "pixelated", objectFit: "cover", display: "block" }}
-                />
+                <div style={{ width: 80, height: 80, overflow: "hidden", position: "relative" }}>
+                  <Image
+                    src="/shayaan.jpg"
+                    alt="Shayaan"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center 20%",
+                      imageRendering: "pixelated",
+                    }}
+                  />
+                </div>
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
                   fontSize: 7,
