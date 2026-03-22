@@ -137,3 +137,87 @@ a:hover {
 .float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Blinking arrow indicator for clickable items */
+@keyframes osrs-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.osrs-blink {
+  animation: osrs-blink 1s ease-in-out infinite;
+}
+
+/* Gentle pulse for primary buttons */
+@keyframes osrs-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.osrs-pulse {
+  animation: osrs-pulse 2s ease-in-out infinite;
+}
+
+/* Arrow slide on hover */
+@keyframes osrs-arrow-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+/* OSRS interactive row styles */
+.osrs-interactive-row {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.osrs-interactive-row:hover {
+  background: rgba(200,169,110,0.12) !important;
+  border-color: #c8a96e !important;
+}
+
+/* OSRS Checkbox */
+.osrs-checkbox {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 2px solid #8b6914;
+  background: #2e1f0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.osrs-checkbox:hover {
+  border-color: #c8a96e;
+  background: #3d2b1f;
+}
+
+.osrs-checkbox.checked {
+  background: #4caf50;
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76,175,80,0.6);
+}
+
+/* OSRS link button hover */
+.osrs-link-btn {
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.osrs-link-btn:hover {
+  border-color: #c8a96e !important;
+  box-shadow: 0 0 10px rgba(200,169,110,0.3);
+}
+
+.osrs-link-btn.primary:hover {
+  box-shadow: 0 0 20px rgba(255,204,68,0.5);
+}
+
+/* Arrow slides right on hover */
+.osrs-link-btn:hover .link-arrow,
+.osrs-link-btn:hover > span:last-child {
+  transform: translateX(4px);
+}

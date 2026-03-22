@@ -192,6 +192,21 @@ export default function QuestLog() {
           overflow: "hidden",
           boxShadow: "0 0 0 1px #2a1f0e, 0 4px 20px rgba(0,0,0,0.6)",
         }}>
+          {/* Hint above quest list */}
+          <div style={{
+            padding: "8px 14px",
+            background: "#1a0f05",
+            borderBottom: "1px solid #3d2b1f",
+            textAlign: "center",
+          }}>
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 6,
+              color: "#8b6914",
+            }}>
+              [ Click quest to expand · Check box to complete ]
+            </span>
+          </div>
           {quests.map((quest, i) => (
             <motion.div
               key={quest.id}
@@ -205,6 +220,8 @@ export default function QuestLog() {
             >
               {/* Quest Row */}
               <div
+                className="osrs-interactive-row"
+                title={expanded.has(quest.id) ? "Click to collapse quest" : "Click to expand quest details"}
                 style={{
                   padding: "10px 14px",
                   display: "flex",
@@ -212,29 +229,27 @@ export default function QuestLog() {
                   gap: 10,
                   cursor: "pointer",
                   userSelect: "none",
+                  border: "1px solid transparent",
+                  transition: "all 0.15s ease",
                 }}
                 onClick={() => toggleExpand(quest.id)}
               >
-                {/* Quest Status Indicator */}
+                {/* Quest Status Indicator - OSRS Checkbox */}
                 <div
                   onClick={(e) => { e.stopPropagation(); toggleQuest(quest.id); }}
-                  style={{
-                    width: 14,
-                    height: 14,
-                    borderRadius: 2,
-                    border: `1px solid ${completed.has(quest.id) ? "#4caf50" : "#8b6914"}`,
-                    background: completed.has(quest.id) ? "#4caf50" : "#1a0f05",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 8,
-                    color: "#1a0f05",
-                    flexShrink: 0,
-                    cursor: "pointer",
-                  }}
+                  title={completed.has(quest.id) ? "Mark as incomplete" : "Mark as complete"}
+                  className={`osrs-checkbox ${completed.has(quest.id) ? "checked" : ""}`}
                 >
-                  {completed.has(quest.id) && "+"}
+                  {completed.has(quest.id) && (
+                    <span style={{
+                      fontFamily: "var(--font-osrs), monospace",
+                      fontSize: 10,
+                      color: "#ffcc44",
+                      fontWeight: "bold",
+                    }}>
+                      ✓
+                    </span>
+                  )}
                 </div>
 
                 {/* Quest Title */}
@@ -251,7 +266,7 @@ export default function QuestLog() {
                 </div>
 
                 {/* Tags */}
-                <div style={{ display: "flex", gap: 6 }}>
+                <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
                   <span style={{
                     fontFamily: "var(--font-osrs), monospace",
                     fontSize: 6,
@@ -273,6 +288,18 @@ export default function QuestLog() {
                     border: "1px solid rgba(255,204,68,0.2)",
                   }}>
                     {quest.xp}
+                  </span>
+                  {/* Blinking expand/collapse arrow */}
+                  <span
+                    className={!expanded.has(quest.id) ? "osrs-blink" : ""}
+                    style={{
+                      fontFamily: "var(--font-osrs), monospace",
+                      fontSize: 8,
+                      color: "#ffcc44",
+                      marginLeft: 4,
+                    }}
+                  >
+                    {expanded.has(quest.id) ? "▼" : "▶"}
                   </span>
                 </div>
               </div>
@@ -329,8 +356,12 @@ export default function QuestLog() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        title={`Open ${link.label}`}
+                        className="osrs-link-btn"
                         style={{
-                          display: "inline-block",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 4,
                           padding: "6px 12px",
                           borderRadius: 2,
                           fontFamily: "var(--font-osrs), monospace",
@@ -339,10 +370,11 @@ export default function QuestLog() {
                           background: "primary" in link && link.primary ? "#ffcc44" : "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
                           color: "primary" in link && link.primary ? "#1a0f05" : "#ffcc44",
                           border: "1px solid #8b6914",
-                          transition: "all 0.2s",
+                          transition: "all 0.15s ease",
                         }}
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <span className="link-arrow" style={{ transition: "transform 0.15s ease" }}>→</span>
                       </a>
                     ))}
                   </div>

@@ -317,11 +317,24 @@ export default function RuneScapeSection() {
                   The Electrician skill scales with hours logged, not raw intelligence. High Work Ethic &amp; Consistency stats grant double XP. Level 99 grants the Journeyman title and unlocks the highest-paying job sites in AZ.
                 </div>
 
+                {/* Click hint */}
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 6,
+                  color: "#8b6914",
+                  textAlign: "center",
+                  marginBottom: 8,
+                }}>
+                  [ Click to expand ]
+                </div>
+
                 {/* Level bars */}
                 {apprenticeLevels.map((lvl, i) => (
                   <div
                     key={lvl.year}
                     onClick={() => setActiveYear(activeYear === i ? null : i)}
+                    title={activeYear === i ? "Click to collapse Year " + lvl.year : "Click to expand Year " + lvl.year + " details"}
+                    className="osrs-interactive-row"
                     style={{
                       marginBottom: 8,
                       cursor: "pointer",
@@ -329,7 +342,7 @@ export default function RuneScapeSection() {
                       borderRadius: 2,
                       background: activeYear === i ? "rgba(255,204,68,0.08)" : "transparent",
                       border: activeYear === i ? "1px solid rgba(139,105,20,0.5)" : "1px solid transparent",
-                      transition: "all 0.2s",
+                      transition: "all 0.15s ease",
                     }}
                   >
                     <div style={{
@@ -348,13 +361,26 @@ export default function RuneScapeSection() {
                           Year {lvl.year} Lvl {lvl.levelRange}
                         </span>
                       </div>
-                      <span style={{
-                        fontFamily: "var(--font-osrs), monospace",
-                        fontSize: 6,
-                        color: lvl.pct >= 100 ? "#ffcc44" : "#4caf50",
-                      }}>
-                        {lvl.hourly}
-                      </span>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <span style={{
+                          fontFamily: "var(--font-osrs), monospace",
+                          fontSize: 6,
+                          color: lvl.pct >= 100 ? "#ffcc44" : "#4caf50",
+                        }}>
+                          {lvl.hourly}
+                        </span>
+                        {/* Blinking expand/collapse arrow */}
+                        <span
+                          className={activeYear !== i ? "osrs-blink" : ""}
+                          style={{
+                            fontFamily: "var(--font-osrs), monospace",
+                            fontSize: 8,
+                            color: "#ffcc44",
+                          }}
+                        >
+                          {activeYear === i ? "▼" : "▶"}
+                        </span>
+                      </div>
                     </div>
 
                     {/* XP bar */}
@@ -418,15 +444,26 @@ export default function RuneScapeSection() {
                         transition={{ duration: 0.25 }}
                         style={{
                           marginTop: 8,
-                          fontFamily: "Georgia, serif",
-                          fontSize: 11,
-                          color: "#c8a96e",
-                          lineHeight: 1.6,
                           paddingTop: 8,
                           borderTop: "1px solid #3d2b1f",
                         }}
                       >
-                        {lvl.task}
+                        <p style={{
+                          fontFamily: "Georgia, serif",
+                          fontSize: 11,
+                          color: "#c8a96e",
+                          lineHeight: 1.6,
+                          marginBottom: 6,
+                        }}>
+                          {lvl.task}
+                        </p>
+                        <span style={{
+                          fontFamily: "var(--font-osrs), monospace",
+                          fontSize: 6,
+                          color: "#8b6914",
+                        }}>
+                          [ Click to collapse ]
+                        </span>
                       </motion.div>
                     )}
                   </div>

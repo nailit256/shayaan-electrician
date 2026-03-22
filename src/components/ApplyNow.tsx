@@ -103,13 +103,20 @@ export default function ApplyNow() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
+              title={link.primary ? "Start your IBEW application here" : `Open ${link.label}`}
+              className={`osrs-link-btn ${link.primary ? "primary osrs-pulse" : ""}`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: 0.1 + i * 0.03 }}
+              whileHover={{
+                scale: link.primary ? 1.03 : 1.02,
+                transition: { duration: 0.15 },
+              }}
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                gap: 6,
                 padding: "10px 12px",
                 borderRadius: 2,
                 fontFamily: "var(--font-osrs), monospace",
@@ -127,7 +134,7 @@ export default function ApplyNow() {
                   ? "0 0 15px rgba(255,204,68,0.3)"
                   : "none",
                 gridColumn: link.primary ? "1 / -1" : "auto",
-                transition: "all 0.2s",
+                transition: "all 0.15s ease",
               }}
             >
               {link.primary && (
@@ -137,10 +144,19 @@ export default function ApplyNow() {
                   width={14}
                   height={14}
                   unoptimized
-                  style={{ imageRendering: "pixelated", marginRight: 8 }}
+                  style={{ imageRendering: "pixelated" }}
                 />
               )}
-              {link.label}
+              <span>{link.label}</span>
+              <span
+                className="link-arrow"
+                style={{
+                  display: "inline-block",
+                  transition: "transform 0.15s ease",
+                }}
+              >
+                →
+              </span>
             </motion.a>
           ))}
         </div>
@@ -151,11 +167,20 @@ export default function ApplyNow() {
         href="https://secure2.tradeschoolinc.com/v5/pejatc-org/login/accountCreate.php"
         target="_blank"
         rel="noopener noreferrer"
+        title="Begin your PEJATC application - the main quest"
+        className="osrs-link-btn"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.5 }}
+        whileHover={{
+          scale: 1.02,
+          transition: { duration: 0.15 },
+        }}
         style={{
-          display: "block",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 8,
           background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
           border: "2px solid #8b6914",
           borderRadius: 2,
@@ -164,6 +189,7 @@ export default function ApplyNow() {
           textDecoration: "none",
           marginBottom: 24,
           boxShadow: "0 0 0 1px #2a1f0e",
+          transition: "all 0.15s ease",
         }}
       >
         <span style={{
@@ -172,6 +198,17 @@ export default function ApplyNow() {
           color: "#ffcc44",
         }}>
           WITHDRAW ALL - Start Your Journey
+        </span>
+        <span
+          style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: 10,
+            color: "#ffcc44",
+            display: "inline-block",
+            transition: "transform 0.15s ease",
+          }}
+        >
+          →
         </span>
       </motion.a>
 
