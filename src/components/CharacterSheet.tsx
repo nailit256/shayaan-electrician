@@ -182,8 +182,10 @@ export default function CharacterSheet() {
                     fill
                     style={{
                       objectFit: "cover",
-                      objectPosition: "35% 20%",
+                      objectPosition: "45% 30%",
                       imageRendering: "pixelated",
+                      transform: "scale(1.6)",
+                      transformOrigin: "45% 30%",
                     }}
                   />
                 </div>
