@@ -53,7 +53,7 @@ export default function PokemonSection() {
           <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
             <h2 style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               color: "#ffcc44",
               marginBottom: 10,
             }}>
@@ -91,8 +91,8 @@ export default function PokemonSection() {
             textAlign: "center",
           }}>
             <span style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 7,
+              fontFamily: "Georgia, serif",
+              fontSize: 13,
               color: "#c8a96e",
             }}>
               A wild job market appeared! Shayaan used TYPE ADVANTAGE!
@@ -116,7 +116,7 @@ export default function PokemonSection() {
                 <Image src={`${WIKI}/Smithing_icon.png`} alt="Electric" width={32} height={32} unoptimized style={{ imageRendering: "pixelated" }} />
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#ffcc44",
                   marginTop: 4,
                 }}>
@@ -134,7 +134,7 @@ export default function PokemonSection() {
                 <Image src={`${WIKI}/Magic_icon.png`} alt="Psychic" width={32} height={32} unoptimized style={{ imageRendering: "pixelated" }} />
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#a855f7",
                   marginTop: 4,
                 }}>
@@ -182,8 +182,8 @@ export default function PokemonSection() {
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 10,
-                    color: "#8b6914",
+                    fontSize: 14,
+                    color: "#c8a96e",
                     lineHeight: 1.6,
                   }}>
                     {t.desc}
@@ -244,7 +244,7 @@ export default function PokemonSection() {
             }}>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 7,
+                fontSize: 8,
                 color: item.highlight ? "#ffcc44" : "#c8a96e",
                 marginBottom: 6,
               }}>
@@ -260,8 +260,8 @@ export default function PokemonSection() {
               </div>
               <div style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 10,
-                color: "#8b6914",
+                fontSize: 14,
+                color: "#c8a96e",
                 lineHeight: 1.5,
               }}>
                 {item.note}

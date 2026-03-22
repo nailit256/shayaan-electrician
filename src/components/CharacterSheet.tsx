@@ -53,7 +53,7 @@ function StatRow({ stat, inView, delay }: { stat: typeof currentStats[0]; inView
       />
       <span style={{
         fontFamily: "var(--font-osrs), monospace",
-        fontSize: 7,
+        fontSize: 8,
         color: "#c8a96e",
         flex: 1,
       }}>
@@ -154,7 +154,7 @@ export default function CharacterSheet() {
             <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
             }}>
               Current Build: Circle K Cashier
@@ -188,7 +188,7 @@ export default function CharacterSheet() {
                 </div>
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
+                  fontSize: 8,
                   color: "#ffcc44",
                   marginTop: 4,
                 }}>
@@ -196,15 +196,15 @@ export default function CharacterSheet() {
                 </div>
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
+                  fontSize: 8,
                   color: "#ffcc44",
                 }}>
                   Total Level: 1
                 </div>
                 <div style={{
-                  fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
-                  color: "#ffcc44",
+                  fontFamily: "Georgia, serif",
+                  fontSize: 12,
+                  color: "#c8a96e",
                   maxWidth: 100,
                   lineHeight: 1.4,
                   marginTop: 2,
@@ -223,10 +223,10 @@ export default function CharacterSheet() {
               marginBottom: 12,
             }}>
               <div style={{
-                fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontFamily: "Georgia, serif",
+                fontSize: 13,
                 color: "#cc3333",
-                lineHeight: 1.8,
+                lineHeight: 1.6,
               }}>
                 Warning: Current path leads to CS grad competing against 10,000 other CS grads
               </div>
@@ -247,7 +247,7 @@ export default function CharacterSheet() {
             }}>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#8b6914",
                 marginBottom: 4,
               }}>
@@ -255,7 +255,7 @@ export default function CharacterSheet() {
               </div>
               <div style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 11,
+                fontSize: 14,
                 color: "#c8a96e",
                 lineHeight: 1.5,
               }}>
@@ -289,7 +289,7 @@ export default function CharacterSheet() {
             <Image src={`${WIKI}/Max_cape.png`} alt="Max" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
             }}>
               Proposed Build: IBEW Journeyman
@@ -306,10 +306,10 @@ export default function CharacterSheet() {
               marginBottom: 12,
             }}>
               <div style={{
-                fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontFamily: "Georgia, serif",
+                fontSize: 13,
                 color: "#4caf50",
-                lineHeight: 1.8,
+                lineHeight: 1.6,
               }}>
                 This build rewards your ACTUAL stats - grind XP + work ethic + consistency = auto-win
               </div>
@@ -330,7 +330,7 @@ export default function CharacterSheet() {
             }}>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#ffcc44",
                 marginBottom: 4,
               }}>
@@ -338,7 +338,7 @@ export default function CharacterSheet() {
               </div>
               <div style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 11,
+                fontSize: 14,
                 color: "#c8a96e",
                 lineHeight: 1.5,
               }}>

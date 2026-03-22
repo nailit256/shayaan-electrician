@@ -121,7 +121,7 @@ export default function Hero() {
             <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 10,
               color: "#ffcc44",
               letterSpacing: 1,
             }}>
@@ -132,8 +132,8 @@ export default function Hero() {
           <div style={{ padding: "16px 20px", background: "#2e1f0e" }}>
             {/* Current Class */}
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontFamily: "Georgia, serif",
+              fontSize: 14,
               color: "#cc3333",
               marginBottom: 12,
               padding: "8px 12px",
@@ -146,8 +146,8 @@ export default function Hero() {
 
             {/* Available Class */}
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontFamily: "Georgia, serif",
+              fontSize: 14,
               color: "#4caf50",
               marginBottom: 16,
               padding: "8px 12px",
@@ -168,13 +168,13 @@ export default function Hero() {
             }}>
               <div style={{ textAlign: "center" }}>
                 <Image src={`${WIKI}/Construction_icon.png`} alt="Construction" width={24} height={24} unoptimized style={{ imageRendering: "pixelated" }} />
-                <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 7, color: "#ffcc44", marginTop: 4 }}>
+                <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 9, color: "#ffcc44", marginTop: 4 }}>
                   1
                 </div>
               </div>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 7,
+                fontSize: 9,
                 color: "#8b6914",
                 display: "flex",
                 alignItems: "center",
@@ -183,7 +183,7 @@ export default function Hero() {
               </div>
               <div style={{ textAlign: "center" }}>
                 <Image src={`${WIKI}/Max_cape.png`} alt="Max" width={24} height={24} unoptimized style={{ imageRendering: "pixelated" }} />
-                <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 7, color: "#4caf50", marginTop: 4 }}>
+                <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 9, color: "#4caf50", marginTop: 4 }}>
                   99
                 </div>
               </div>
@@ -214,10 +214,10 @@ export default function Hero() {
             gap: 6,
           }}>
             <Image src={`${WIKI}/Construction_icon.png`} alt="Electrician" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
-            <span style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 7, color: "#ffcc44" }}>
+            <span style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 9, color: "#ffcc44" }}>
               Electrician
             </span>
-            <span style={{ marginLeft: "auto", fontFamily: "var(--font-osrs), monospace", fontSize: 7, color: "#4caf50" }}>
+            <span style={{ marginLeft: "auto", fontFamily: "var(--font-osrs), monospace", fontSize: 9, color: "#4caf50" }}>
               Level 1 / 99
             </span>
           </div>
@@ -240,7 +240,7 @@ export default function Hero() {
                 0 / 13,034,431 xp
               </div>
             </div>
-            <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#8b6914", marginTop: 5, textAlign: "center" }}>
+            <div style={{ fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#8b6914", marginTop: 5, textAlign: "center" }}>
               Scroll down to see the full grind
             </div>
           </div>
@@ -282,7 +282,7 @@ export default function Hero() {
                 </div>
                 <div style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#8b6914",
                   marginTop: 4,
                 }}>

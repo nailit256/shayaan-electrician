@@ -62,7 +62,7 @@ export default function ArizonaBoom() {
           <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
             <h2 style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               color: "#ffcc44",
               marginBottom: 10,
             }}>
@@ -112,7 +112,7 @@ export default function ArizonaBoom() {
                 <Image src={co.icon} alt={co.name} width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
                 <span style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
+                  fontSize: 8,
                   color: "#ffcc44",
                 }}>
                   You have entered: {co.name} Zone
@@ -141,7 +141,7 @@ export default function ArizonaBoom() {
                 }}>
                   <span style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     color: "#8b6914",
                   }}>
                     Location: {co.location}
@@ -151,7 +151,7 @@ export default function ArizonaBoom() {
                 {/* Description */}
                 <p style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: 11,
+                  fontSize: 14,
                   color: "#c8a96e",
                   lineHeight: 1.6,
                   marginBottom: 10,
@@ -168,7 +168,7 @@ export default function ArizonaBoom() {
                 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     color: "#4caf50",
                   }}>
                     Danger level: None | Skill req: Electrician 40+ | Reward: $45-55/hr
@@ -204,7 +204,7 @@ export default function ArizonaBoom() {
           </div>
           <p style={{
             fontFamily: "Georgia, serif",
-            fontSize: 13,
+            fontSize: 14,
             color: "#c8a96e",
             lineHeight: 1.7,
           }}>

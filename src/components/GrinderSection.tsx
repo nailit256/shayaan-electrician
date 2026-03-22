@@ -47,7 +47,7 @@ export default function GrinderSection() {
         <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
           <h2 style={{
             fontFamily: "var(--font-osrs), monospace",
-            fontSize: "clamp(10px, 2vw, 14px)",
+            fontSize: "clamp(14px, 2.5vw, 20px)",
             color: "#ffcc44",
             marginBottom: 10,
           }}>
@@ -89,7 +89,7 @@ export default function GrinderSection() {
             <Image src={`${WIKI}/Magic_icon.png`} alt="CS" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#cc3333",
             }}>
               CS Job Market
@@ -129,7 +129,7 @@ export default function GrinderSection() {
                 </span>
                 <span style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: 11,
+                  fontSize: 14,
                   color: "#c8a96e",
                   lineHeight: 1.5,
                 }}>
@@ -164,7 +164,7 @@ export default function GrinderSection() {
             <Image src={`${WIKI}/Smithing_icon.png`} alt="Trades" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#4caf50",
             }}>
               The Trades
@@ -204,7 +204,7 @@ export default function GrinderSection() {
                 </span>
                 <span style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: 11,
+                  fontSize: 14,
                   color: "#c8a96e",
                   lineHeight: 1.5,
                 }}>
@@ -257,13 +257,13 @@ export default function GrinderSection() {
             borderBottom: "1px solid #8b6914",
             background: "#1a0f05",
           }}>
-            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#8b6914" }}>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#8b6914" }}>
               Skill
             </div>
-            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#cc3333", textAlign: "center" }}>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#cc3333", textAlign: "center" }}>
               CS Grad Rank
             </div>
-            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#4caf50", textAlign: "center" }}>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#4caf50", textAlign: "center" }}>
               Electrician Rank
             </div>
           </div>
@@ -281,7 +281,7 @@ export default function GrinderSection() {
               gridTemplateColumns: "1fr 1fr 1fr",
               borderBottom: i < 4 ? "1px solid #3d2b1f" : "none",
             }}>
-              <div style={{ padding: "8px 12px", fontFamily: "Georgia, serif", fontSize: 11, color: "#c8a96e" }}>
+              <div style={{ padding: "8px 12px", fontFamily: "Georgia, serif", fontSize: 13, color: "#c8a96e" }}>
                 {row.skill}
               </div>
               <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#cc3333", textAlign: "center" }}>
@@ -313,7 +313,7 @@ export default function GrinderSection() {
           <div>
             <div style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
               marginBottom: 8,
             }}>
@@ -321,7 +321,7 @@ export default function GrinderSection() {
             </div>
             <p style={{
               fontFamily: "Georgia, serif",
-              fontSize: 12,
+              fontSize: 14,
               color: "#c8a96e",
               lineHeight: 1.7,
             }}>
@@ -359,8 +359,8 @@ export default function GrinderSection() {
           you can grind this to Journeyman.&quot;
         </p>
         <p style={{
-          fontFamily: "var(--font-osrs), monospace",
-          fontSize: 7,
+          fontFamily: "Georgia, serif",
+          fontSize: 13,
           color: "#8b6914",
           marginTop: 12,
         }}>

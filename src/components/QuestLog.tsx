@@ -168,7 +168,7 @@ export default function QuestLog() {
           <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
             <h2 style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               color: "#ffcc44",
               marginBottom: 10,
             }}>
@@ -176,7 +176,7 @@ export default function QuestLog() {
             </h2>
             <p style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#c8a96e",
             }}>
               {completed.size} / {quests.length} quests completed. Click to check them off.
@@ -256,7 +256,7 @@ export default function QuestLog() {
                 <div style={{ flex: 1 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 9,
                     color: completed.has(quest.id) ? "#4caf50" : "#ffcc44",
                     textDecoration: completed.has(quest.id) ? "line-through" : "none",
                     opacity: completed.has(quest.id) ? 0.7 : 1,
@@ -269,7 +269,7 @@ export default function QuestLog() {
                 <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
                   <span style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     padding: "2px 6px",
                     background: quest.difficulty === "Easy" ? "rgba(76,175,80,0.15)" : "rgba(255,204,68,0.15)",
                     color: quest.difficulty === "Easy" ? "#4caf50" : "#ffcc44",
@@ -280,7 +280,7 @@ export default function QuestLog() {
                   </span>
                   <span style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     padding: "2px 6px",
                     background: "rgba(255,204,68,0.1)",
                     color: "#ffcc44",
@@ -324,7 +324,7 @@ export default function QuestLog() {
                   }}>
                     <div style={{
                       fontFamily: "var(--font-osrs), monospace",
-                      fontSize: 6,
+                      fontSize: 8,
                       color: "#8b6914",
                       marginBottom: 6,
                     }}>
@@ -332,7 +332,7 @@ export default function QuestLog() {
                     </div>
                     <p style={{
                       fontFamily: "Georgia, serif",
-                      fontSize: 11,
+                      fontSize: 14,
                       color: "#c8a96e",
                       lineHeight: 1.6,
                     }}>
@@ -343,7 +343,7 @@ export default function QuestLog() {
                   {/* Reward Links */}
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     color: "#8b6914",
                     marginBottom: 8,
                   }}>
@@ -365,7 +365,7 @@ export default function QuestLog() {
                           padding: "6px 12px",
                           borderRadius: 2,
                           fontFamily: "var(--font-osrs), monospace",
-                          fontSize: 6,
+                          fontSize: 8,
                           textDecoration: "none",
                           background: "primary" in link && link.primary ? "#ffcc44" : "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
                           color: "primary" in link && link.primary ? "#1a0f05" : "#ffcc44",
@@ -404,14 +404,14 @@ export default function QuestLog() {
           }}>
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 7,
+              fontSize: 8,
               color: "#c8a96e",
             }}>
               Quest Progress
             </span>
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 7,
+              fontSize: 8,
               color: "#ffcc44",
             }}>
               {completed.size} / {quests.length}
@@ -442,7 +442,7 @@ export default function QuestLog() {
               textAlign: "center",
               marginTop: 10,
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
             }}>
               ALL QUESTS COMPLETE! Your journey to Journeyman begins!

@@ -53,7 +53,7 @@ export default function ShakibWarning() {
           <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
             <h2 style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               color: "#ffcc44",
               marginBottom: 10,
             }}>
@@ -96,7 +96,7 @@ export default function ShakibWarning() {
             <div>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#cc3333",
                 letterSpacing: 1,
               }}>
@@ -134,7 +134,7 @@ export default function ShakibWarning() {
                 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     color: "#8b6914",
                     marginBottom: 4,
                   }}>
@@ -142,7 +142,7 @@ export default function ShakibWarning() {
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 14,
                     color: "#c8a96e",
                   }}>
                     {item.value}
@@ -175,10 +175,10 @@ export default function ShakibWarning() {
               padding: "10px 12px",
             }}>
               <div style={{
-                fontFamily: "var(--font-osrs), monospace",
-                fontSize: 7,
+                fontFamily: "Georgia, serif",
+                fontSize: 14,
                 color: "#cc3333",
-                lineHeight: 1.8,
+                lineHeight: 1.6,
               }}>
                 Warning: You are currently on the same quest. Same major. Same market. And you don&apos;t have a Masters.
               </div>
@@ -211,7 +211,7 @@ export default function ShakibWarning() {
             <div>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#4caf50",
                 letterSpacing: 1,
               }}>
@@ -249,7 +249,7 @@ export default function ShakibWarning() {
                 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 6,
+                    fontSize: 8,
                     color: "#8b6914",
                     marginBottom: 4,
                   }}>
@@ -257,7 +257,7 @@ export default function ShakibWarning() {
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 14,
                     color: "#c8a96e",
                   }}>
                     {item.value}

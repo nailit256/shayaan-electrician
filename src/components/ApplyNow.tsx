@@ -61,7 +61,7 @@ export default function ApplyNow() {
         <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
           <h2 style={{
             fontFamily: "var(--font-osrs), monospace",
-            fontSize: "clamp(10px, 2vw, 14px)",
+            fontSize: "clamp(14px, 2.5vw, 20px)",
             color: "#ffcc44",
             marginBottom: 10,
           }}>
@@ -120,7 +120,7 @@ export default function ApplyNow() {
                 padding: "10px 12px",
                 borderRadius: 2,
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 textDecoration: "none",
                 textAlign: "center",
                 background: link.primary
@@ -246,7 +246,7 @@ export default function ApplyNow() {
         </p>
         <p style={{
           fontFamily: "Georgia, serif",
-          fontSize: 13,
+          fontSize: 14,
           color: "#c8a96e",
           lineHeight: 1.7,
           maxWidth: 500,
@@ -257,8 +257,8 @@ export default function ApplyNow() {
           in you enough to put in the work.
         </p>
         <p style={{
-          fontFamily: "var(--font-osrs), monospace",
-          fontSize: 8,
+          fontFamily: "Georgia, serif",
+          fontSize: 14,
           color: "#8b6914",
           marginTop: 16,
         }}>

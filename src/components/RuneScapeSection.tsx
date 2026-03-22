@@ -105,7 +105,7 @@ function OSRSSkillCell({ skill, inView }: { skill: typeof allSkills[0]; inView: 
         unoptimized
       />
       <span style={{
-        fontSize: 8,
+        fontSize: 9,
         fontFamily: "var(--font-osrs), monospace",
         color: skill.highlight ? "#ffcc44" : "#c8a96e",
         lineHeight: 1,
@@ -166,7 +166,7 @@ export default function RuneScapeSection() {
           <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
             <h2 style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               color: "#ffcc44",
               marginBottom: 10,
             }}>
@@ -213,7 +213,7 @@ export default function RuneScapeSection() {
                 <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
                 <span style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 8,
+                  fontSize: 9,
                   color: "#ffcc44",
                 }}>
                   Skills
@@ -240,7 +240,7 @@ export default function RuneScapeSection() {
               }}>
                 <span style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
+                  fontSize: 8,
                   color: "#ffcc44",
                 }}>
                   Total level: 1,257
@@ -260,7 +260,7 @@ export default function RuneScapeSection() {
             }}>
               <p style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 12,
+                fontSize: 14,
                 color: "#c8a96e",
                 textAlign: "center",
                 lineHeight: 1.6,
@@ -294,7 +294,7 @@ export default function RuneScapeSection() {
                 <Image src={`${WIKI}/Construction_icon.png`} alt="Construction" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
                 <span style={{
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 7,
+                  fontSize: 8,
                   color: "#ffcc44",
                 }}>
                   Electrician - The 5-Year Grind
@@ -305,7 +305,7 @@ export default function RuneScapeSection() {
                 {/* Skill description */}
                 <div style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: 11,
+                  fontSize: 14,
                   color: "#c8a96e",
                   lineHeight: 1.7,
                   marginBottom: 14,
@@ -450,7 +450,7 @@ export default function RuneScapeSection() {
                       >
                         <p style={{
                           fontFamily: "Georgia, serif",
-                          fontSize: 11,
+                          fontSize: 14,
                           color: "#c8a96e",
                           lineHeight: 1.6,
                           marginBottom: 6,
@@ -485,7 +485,7 @@ export default function RuneScapeSection() {
                 >
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 9,
                     color: "#ffcc44",
                     lineHeight: 2,
                   }}>

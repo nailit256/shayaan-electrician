@@ -47,7 +47,7 @@ export default function MinecraftSection() {
         <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
           <h2 style={{
             fontFamily: "var(--font-osrs), monospace",
-            fontSize: "clamp(10px, 2vw, 14px)",
+            fontSize: "clamp(14px, 2.5vw, 20px)",
             color: "#ffcc44",
             marginBottom: 10,
           }}>
@@ -90,7 +90,7 @@ export default function MinecraftSection() {
             <Image src={`${WIKI}/Crafting_icon.png`} alt="Crafting" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#c8a96e",
             }}>
               Training Method: Minecraft
@@ -113,7 +113,7 @@ export default function MinecraftSection() {
                 <div style={{
                   padding: "6px 10px",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#8b6914",
                   borderRight: "1px solid #3d2b1f",
                 }}>
@@ -122,7 +122,7 @@ export default function MinecraftSection() {
                 <div style={{
                   padding: "6px 10px",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#8b6914",
                 }}>
                   Result
@@ -143,7 +143,7 @@ export default function MinecraftSection() {
                   <div style={{
                     padding: "8px 10px",
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 13,
                     color: "#c8a96e",
                     borderRight: "1px solid #3d2b1f",
                   }}>
@@ -152,7 +152,7 @@ export default function MinecraftSection() {
                   <div style={{
                     padding: "8px 10px",
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 13,
                     color: "#8b6914",
                   }}>
                     {row.result}
@@ -187,7 +187,7 @@ export default function MinecraftSection() {
             <Image src={`${WIKI}/Construction_icon.png`} alt="Construction" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
             <span style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
             }}>
               Training Method: IRL Electrician
@@ -210,7 +210,7 @@ export default function MinecraftSection() {
                 <div style={{
                   padding: "6px 10px",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#8b6914",
                   borderRight: "1px solid #3d2b1f",
                 }}>
@@ -219,7 +219,7 @@ export default function MinecraftSection() {
                 <div style={{
                   padding: "6px 10px",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 6,
+                  fontSize: 8,
                   color: "#8b6914",
                 }}>
                   Result
@@ -240,7 +240,7 @@ export default function MinecraftSection() {
                   <div style={{
                     padding: "8px 10px",
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 13,
                     color: "#c8a96e",
                     borderRight: "1px solid #3d2b1f",
                   }}>
@@ -249,7 +249,7 @@ export default function MinecraftSection() {
                   <div style={{
                     padding: "8px 10px",
                     fontFamily: "Georgia, serif",
-                    fontSize: 11,
+                    fontSize: 13,
                     color: row.result === "PERMANENT" || row.result === "$20-55" ? "#4caf50" : "#c8a96e",
                   }}>
                     {row.result}
@@ -287,8 +287,8 @@ export default function MinecraftSection() {
           &quot;That TSMC chip fab that makes the processors in your phone? <span style={{ color: "#4caf50" }}>I wired that.</span>&quot;
         </p>
         <p style={{
-          fontFamily: "var(--font-osrs), monospace",
-          fontSize: 7,
+          fontFamily: "Georgia, serif",
+          fontSize: 13,
           color: "#8b6914",
           marginTop: 12,
         }}>

@@ -66,7 +66,7 @@ export default function TwoFutures() {
         <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
           <h2 style={{
             fontFamily: "var(--font-osrs), monospace",
-            fontSize: "clamp(10px, 2vw, 14px)",
+            fontSize: "clamp(14px, 2.5vw, 20px)",
             color: "#ffcc44",
             marginBottom: 10,
           }}>
@@ -106,7 +106,7 @@ export default function TwoFutures() {
             <Image src={`${WIKI}/Magic_icon.png`} alt="CS" width={20} height={20} unoptimized style={{ imageRendering: "pixelated", marginBottom: 6 }} />
             <div style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#cc3333",
             }}>
               Path A: Stay in CS (Hard Mode)
@@ -137,7 +137,7 @@ export default function TwoFutures() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 8,
+                  fontSize: 9,
                   color: step.color,
                   flexShrink: 0,
                 }}>
@@ -146,7 +146,7 @@ export default function TwoFutures() {
                 <div>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 9,
                     color: step.color,
                     marginBottom: 4,
                   }}>
@@ -154,8 +154,8 @@ export default function TwoFutures() {
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 10,
-                    color: "#8b6914",
+                    fontSize: 14,
+                    color: "#c8a96e",
                     lineHeight: 1.5,
                   }}>
                     {step.desc}
@@ -181,8 +181,8 @@ export default function TwoFutures() {
               At 26: Maybe $70K
             </div>
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 6,
+              fontFamily: "Georgia, serif",
+              fontSize: 13,
               color: "#8b6914",
             }}>
               High risk. Market dependent. AI replacing junior devs.
@@ -212,7 +212,7 @@ export default function TwoFutures() {
             <Image src={`${WIKI}/Construction_icon.png`} alt="Trade" width={20} height={20} unoptimized style={{ imageRendering: "pixelated", marginBottom: 6 }} />
             <div style={{
               fontFamily: "var(--font-osrs), monospace",
-              fontSize: 8,
+              fontSize: 9,
               color: "#ffcc44",
             }}>
               Path B: Become an Electrician (Normal Mode + OP Rewards)
@@ -243,7 +243,7 @@ export default function TwoFutures() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontFamily: "var(--font-osrs), monospace",
-                  fontSize: 8,
+                  fontSize: 9,
                   color: step.color,
                   flexShrink: 0,
                 }}>
@@ -252,7 +252,7 @@ export default function TwoFutures() {
                 <div>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 9,
                     color: step.color,
                     marginBottom: 4,
                   }}>
@@ -260,8 +260,8 @@ export default function TwoFutures() {
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 10,
-                    color: "#8b6914",
+                    fontSize: 14,
+                    color: "#c8a96e",
                     lineHeight: 1.5,
                   }}>
                     {step.desc}
@@ -287,8 +287,8 @@ export default function TwoFutures() {
               At 26: $100K+ Journeyman
             </div>
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 6,
+              fontFamily: "Georgia, serif",
+              fontSize: 13,
               color: "#4caf50",
             }}>
               Guaranteed progression. Union contract. Pension building. AI-proof.

@@ -65,7 +65,7 @@ export default function CircleKVsTrade() {
         <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
           <h2 style={{
             fontFamily: "var(--font-osrs), monospace",
-            fontSize: "clamp(10px, 2vw, 14px)",
+            fontSize: "clamp(14px, 2.5vw, 20px)",
             color: "#ffcc44",
             marginBottom: 10,
           }}>
@@ -125,7 +125,7 @@ export default function CircleKVsTrade() {
             }}>
               <div style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 11,
+                fontSize: 14,
                 color: "#c8a96e",
                 lineHeight: 1.6,
                 marginBottom: 8,
@@ -134,7 +134,7 @@ export default function CircleKVsTrade() {
               </div>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#8b6914",
               }}>
                 Attack bonus: +0<br />
@@ -162,15 +162,15 @@ export default function CircleKVsTrade() {
                 <div>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 8,
                     color: i === 5 ? "#cc3333" : "#c8a96e",
                   }}>
                     {row.year}
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 10,
-                    color: "#8b6914",
+                    fontSize: 13,
+                    color: "#c8a96e",
                     marginTop: 2,
                   }}>
                     {row.note}
@@ -179,7 +179,7 @@ export default function CircleKVsTrade() {
                 <div style={{ textAlign: "right", flexShrink: 0 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 8,
                     color: "#cc3333",
                   }}>
                     {row.pay}
@@ -187,7 +187,7 @@ export default function CircleKVsTrade() {
                   {i > 0 && (
                     <div style={{
                       fontFamily: "var(--font-osrs), monospace",
-                      fontSize: 6,
+                      fontSize: 7,
                       color: "#8b6914",
                       marginTop: 2,
                     }}>
@@ -214,8 +214,8 @@ export default function CircleKVsTrade() {
               $149,700
             </div>
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 6,
+              fontFamily: "Georgia, serif",
+              fontSize: 13,
               color: "#8b6914",
               marginTop: 4,
             }}>
@@ -266,7 +266,7 @@ export default function CircleKVsTrade() {
             }}>
               <div style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 11,
+                fontSize: 14,
                 color: "#c8a96e",
                 lineHeight: 1.6,
                 marginBottom: 8,
@@ -275,7 +275,7 @@ export default function CircleKVsTrade() {
               </div>
               <div style={{
                 fontFamily: "var(--font-osrs), monospace",
-                fontSize: 6,
+                fontSize: 8,
                 color: "#4caf50",
               }}>
                 Attack bonus: +99<br />
@@ -303,15 +303,15 @@ export default function CircleKVsTrade() {
                 <div>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 8,
                     color: i === 5 ? "#ffcc44" : "#c8a96e",
                   }}>
                     {row.year}
                   </div>
                   <div style={{
                     fontFamily: "Georgia, serif",
-                    fontSize: 10,
-                    color: "#8b6914",
+                    fontSize: 13,
+                    color: "#c8a96e",
                     marginTop: 2,
                   }}>
                     {row.note}
@@ -320,7 +320,7 @@ export default function CircleKVsTrade() {
                 <div style={{ textAlign: "right", flexShrink: 0 }}>
                   <div style={{
                     fontFamily: "var(--font-osrs), monospace",
-                    fontSize: 7,
+                    fontSize: 8,
                     color: i === 5 ? "#ffcc44" : "#4caf50",
                   }}>
                     {row.pay}
@@ -328,7 +328,7 @@ export default function CircleKVsTrade() {
                   {i > 0 && (
                     <div style={{
                       fontFamily: "var(--font-osrs), monospace",
-                      fontSize: 6,
+                      fontSize: 7,
                       color: "#8b6914",
                       marginTop: 2,
                     }}>
@@ -355,8 +355,8 @@ export default function CircleKVsTrade() {
               $315,000+
             </div>
             <div style={{
-              fontFamily: "var(--font-osrs), monospace",
-              fontSize: 6,
+              fontFamily: "Georgia, serif",
+              fontSize: 13,
               color: "#8b6914",
               marginTop: 4,
             }}>
