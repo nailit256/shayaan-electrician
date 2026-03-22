@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --yellow: #FFD700;
-  --orange: #FF6B00;
-  --dark: #0D0D0D;
-  --card: #141414;
-  --border: #252525;
-  --text: #e8e8e8;
-  --muted: #777;
-  --green: #22c55e;
-  --blue: #3b82f6;
-  --red: #ef4444;
+  /* OSRS Color Palette */
+  --osrs-panel: #3d2b1f;
+  --osrs-panel-dark: #2e1f0e;
+  --osrs-panel-darker: #1a0f05;
+  --osrs-border: #8b6914;
+  --osrs-border-light: #c8a96e;
+  --osrs-text: #ffcc44;
+  --osrs-text-secondary: #c8a96e;
+  --osrs-text-muted: #8b6914;
+  --osrs-xp-green: #4caf50;
+  --osrs-green-bright: #a3e635;
+  --osrs-background: #1a0d05;
+  --osrs-danger: #cc3333;
+  --osrs-good: #4caf50;
+  --osrs-header-gradient-start: #5a3a1a;
+  --osrs-header-gradient-end: #3d2b1f;
 }
 
 * {
@@ -22,84 +28,105 @@ html {
 }
 
 body {
-  background: var(--dark);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--osrs-background);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(90,58,26,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(90,58,26,0.1) 0%, transparent 50%);
+  color: var(--osrs-text-secondary);
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* OSRS pixel font feel */
-.osrs-font {
-  font-family: 'Courier New', Courier, monospace;
-  letter-spacing: 0.5px;
+/* OSRS Panel Base Styles */
+.osrs-panel {
+  background: var(--osrs-panel);
+  border: 2px solid var(--osrs-border);
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px #2a1f0e,
+    inset 0 1px 0 rgba(200,169,110,0.1),
+    2px 4px 12px rgba(0,0,0,0.8);
 }
 
-/* Glow effects */
-.glow-yellow {
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
+.osrs-panel-header {
+  background: linear-gradient(180deg, var(--osrs-header-gradient-start) 0%, var(--osrs-header-gradient-end) 100%);
+  border-bottom: 1px solid var(--osrs-border);
+  padding: 4px 8px;
+  font-family: var(--font-osrs), monospace;
+  font-size: 8px;
+  color: var(--osrs-text);
 }
 
-.glow-orange {
-  text-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+.osrs-panel-content {
+  background: var(--osrs-panel-dark);
+  padding: 12px;
 }
 
-.border-glow {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15), inset 0 0 20px rgba(255, 215, 0, 0.05);
+/* OSRS Button */
+.osrs-button {
+  background: linear-gradient(180deg, #5a3a1a, #3d2b1f);
+  border: 1px solid var(--osrs-border);
+  border-radius: 2px;
+  color: var(--osrs-text);
+  font-family: var(--font-osrs), monospace;
+  font-size: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-/* Scan line effect for OSRS panels */
-.scanlines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
+.osrs-button:hover {
+  background: linear-gradient(180deg, #6a4a2a, #4d3b2f);
+  border-color: var(--osrs-border-light);
 }
 
-/* XP bar gradient */
-.xp-bar-fill {
-  background: linear-gradient(90deg, #4a2c00, #FF6B00, #FFD700);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+/* Links */
+a {
+  color: var(--osrs-text);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-/* Quest log styling */
-.quest-complete {
-  text-decoration: line-through;
-  opacity: 0.5;
+a:hover {
+  color: #cc7a00;
+}
+
+/* XP Bar */
+.osrs-xp-bar {
+  background: var(--osrs-panel-darker);
+  border: 1px solid var(--osrs-panel);
+  border-radius: 1px;
+  height: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.osrs-xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a4a07, #2d6b0e, var(--osrs-xp-green));
+  border-radius: 1px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--dark);
+  background: var(--osrs-panel-darker);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
+  background: var(--osrs-border);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--orange);
+  background: var(--osrs-border-light);
 }
 
-/* Section divider */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-}
-
-/* Lightning animation */
-@keyframes lightning-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.lightning-pulse {
-  animation: lightning-pulse 2s ease-in-out infinite;
+/* Animations */
+@keyframes osrs-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
 }
 
 @keyframes float {
@@ -109,9 +136,4 @@ body {
 
 .float {
   animation: float 3s ease-in-out infinite;
-}
-
-@keyframes xp-shine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
 }

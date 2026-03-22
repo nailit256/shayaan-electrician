@@ -2,6 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+
+const WIKI = "https://oldschool.runescape.wiki/images";
 
 export default function PokemonSection() {
   const ref = useRef(null);
@@ -9,119 +12,260 @@ export default function PokemonSection() {
 
   return (
     <section style={{
-      background: "linear-gradient(180deg, #0D0D0D, #00050a, #0D0D0D)",
-      borderTop: "1px solid #252525",
-      borderBottom: "1px solid #252525",
-      padding: "70px 20px",
+      background: "#1a0d05",
+      borderTop: "2px solid #8b6914",
+      borderBottom: "2px solid #8b6914",
+      padding: "60px 20px",
     }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }} ref={ref}>
+        {/* Section Header - Skill Guide Style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: 44 }}
+          style={{
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
+            marginBottom: 20,
+            boxShadow: "0 0 0 1px #2a1f0e, inset 0 1px 0 rgba(200,169,110,0.1)",
+          }}
         >
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#3b82f6", marginBottom: 8 }}>
-            Type Matchup
+          <div style={{
+            background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+            borderBottom: "1px solid #8b6914",
+            padding: "8px 12px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 10,
+          }}>
+            <Image src={`${WIKI}/Magic_icon.png`} alt="Magic" width={20} height={20} unoptimized style={{ imageRendering: "pixelated" }} />
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 10,
+              color: "#ffcc44",
+              letterSpacing: 1,
+            }}>
+              Skill Guide
+            </span>
           </div>
-          <h2 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 900, marginBottom: 8 }}>
-            You Have a <span style={{ color: "#FFD700" }}>Type Advantage</span> 🔥
-          </h2>
-          <p style={{ color: "#777", fontSize: 15 }}>
-            In Pokémon, rare type combinations are the most powerful. You&apos;re a rare build.
-          </p>
+          <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
+            <h2 style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: "clamp(10px, 2vw, 14px)",
+              color: "#ffcc44",
+              marginBottom: 10,
+            }}>
+              Rare Skill Combination Detected
+            </h2>
+            <p style={{
+              fontFamily: "Georgia, serif",
+              fontSize: 14,
+              color: "#c8a96e",
+              lineHeight: 1.6,
+            }}>
+              In Pokemon, rare type combinations are the most powerful. You&apos;re a rare build.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Type battle card */}
+        {/* Type Combination Panel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
           style={{
-            background: "#0c0c14",
-            border: "1px solid #1a1a2a",
-            borderRadius: 16,
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
             overflow: "hidden",
-            marginBottom: 20,
+            marginBottom: 16,
+            boxShadow: "0 0 0 1px #2a1f0e, 0 4px 20px rgba(0,0,0,0.6)",
           }}
         >
           <div style={{
-            background: "linear-gradient(135deg, #0a0010, #0c0c14)",
-            padding: "16px 24px",
-            borderBottom: "1px solid #1a1a2a",
+            background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+            borderBottom: "1px solid #8b6914",
+            padding: "8px 12px",
             textAlign: "center",
           }}>
-            <span style={{ fontFamily: "monospace", fontSize: 13, color: "#aaa" }}>
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 7,
+              color: "#c8a96e",
+            }}>
               A wild job market appeared! Shayaan used TYPE ADVANTAGE!
             </span>
           </div>
 
-          <div style={{ padding: "28px 24px" }}>
+          <div style={{ padding: "16px", background: "#2e1f0e" }}>
+            {/* Skill Icons Row */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 20,
+              marginBottom: 20,
+              padding: "12px",
+              background: "#1a0f05",
+              border: "1px solid #3d2b1f",
+              borderRadius: 2,
+            }}>
+              <div style={{ textAlign: "center" }}>
+                <Image src={`${WIKI}/Smithing_icon.png`} alt="Electric" width={32} height={32} unoptimized style={{ imageRendering: "pixelated" }} />
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 6,
+                  color: "#ffcc44",
+                  marginTop: 4,
+                }}>
+                  Electric
+                </div>
+              </div>
+              <div style={{
+                fontFamily: "var(--font-osrs), monospace",
+                fontSize: 10,
+                color: "#8b6914",
+              }}>
+                +
+              </div>
+              <div style={{ textAlign: "center" }}>
+                <Image src={`${WIKI}/Magic_icon.png`} alt="Psychic" width={32} height={32} unoptimized style={{ imageRendering: "pixelated" }} />
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 6,
+                  color: "#a855f7",
+                  marginTop: 4,
+                }}>
+                  Psychic
+                </div>
+              </div>
+            </div>
+
+            {/* Type Grid */}
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: 16,
-              marginBottom: 24,
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: 12,
+              marginBottom: 16,
             }}>
               {[
-                { type: "⚡ Electric", trait: "Trade Skills", desc: "Can wire buildings, read blueprints, run conduit. Physical mastery that takes years to learn." },
-                { type: "🧠 Psychic", trait: "Tech Knowledge", desc: "CS background from ASU. Understands software, automation, PLCs, smart building systems." },
-                { type: "🌍 Ground", trait: "Bangladeshi-American", desc: "Family-oriented. Understands hard work from immigrant values. Never quits." },
-                { type: "💧 Water", trait: "Grinder Stamina", desc: "Plays RuneScape. Knows how to put in hours for long-term gains without burning out." },
+                { icon: `${WIKI}/Smithing_icon.png`, type: "Electric", trait: "Trade Skills", desc: "Can wire buildings, read blueprints, run conduit. Physical mastery that takes years to learn." },
+                { icon: `${WIKI}/Magic_icon.png`, type: "Psychic", trait: "Tech Knowledge", desc: "CS background from ASU. Understands software, automation, PLCs, smart building systems." },
+                { icon: `${WIKI}/Mining_icon.png`, type: "Ground", trait: "Grinder Values", desc: "Family-oriented. Understands hard work from immigrant values. Never quits." },
+                { icon: `${WIKI}/Fishing_icon.png`, type: "Water", trait: "Grind Stamina", desc: "Plays RuneScape. Knows how to put in hours for long-term gains without burning out." },
               ].map((t) => (
                 <div key={t.type} style={{
-                  background: "#080810",
-                  border: "1px solid #1a1a2a",
-                  borderRadius: 10,
-                  padding: "16px",
+                  background: "#1a0f05",
+                  border: "1px solid #3d2b1f",
+                  borderRadius: 2,
+                  padding: "12px",
                 }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 13, color: "#3b82f6", marginBottom: 6, fontWeight: 700 }}>{t.type}</div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#ccc", marginBottom: 6 }}>{t.trait}</div>
-                  <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>{t.desc}</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                    <Image src={t.icon} alt={t.type} width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
+                    <span style={{
+                      fontFamily: "var(--font-osrs), monospace",
+                      fontSize: 7,
+                      color: "#ffcc44",
+                    }}>
+                      {t.type}
+                    </span>
+                  </div>
+                  <div style={{
+                    fontFamily: "var(--font-osrs), monospace",
+                    fontSize: 7,
+                    color: "#c8a96e",
+                    marginBottom: 6,
+                  }}>
+                    {t.trait}
+                  </div>
+                  <div style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: 10,
+                    color: "#8b6914",
+                    lineHeight: 1.6,
+                  }}>
+                    {t.desc}
+                  </div>
                 </div>
               ))}
             </div>
 
+            {/* Super Effective Box */}
             <div style={{
-              background: "rgba(255,215,0,0.06)",
-              border: "1px solid rgba(255,215,0,0.2)",
-              borderRadius: 10,
-              padding: "18px 20px",
+              background: "#1a0f05",
+              border: "2px solid rgba(255,204,68,0.4)",
+              borderRadius: 2,
+              padding: "14px 16px",
               textAlign: "center",
             }}>
-              <div style={{ fontFamily: "monospace", fontSize: 14, color: "#FFD700", fontWeight: 700, marginBottom: 8 }}>
-                ⚡ SUPER EFFECTIVE!
+              <div style={{
+                fontFamily: "var(--font-osrs), monospace",
+                fontSize: 9,
+                color: "#ffcc44",
+                marginBottom: 10,
+              }}>
+                SUPER EFFECTIVE!
               </div>
-              <p style={{ fontSize: 14, color: "#aaa", lineHeight: 1.7 }}>
+              <p style={{
+                fontFamily: "Georgia, serif",
+                fontSize: 13,
+                color: "#c8a96e",
+                lineHeight: 1.7,
+              }}>
                 Less than 3% of electricians have any CS or programming knowledge.
-                In a world being wired for automation — smart buildings, chip fabs, data centers —
-                you would be <strong style={{ color: "#FFD700" }}>irreplaceable</strong>.
+                In a world being wired for automation - smart buildings, chip fabs, data centers -
+                you would be <span style={{ color: "#ffcc44" }}>irreplaceable</span>.
                 That&apos;s not just an electrician. That&apos;s a $120K+ industrial automation specialist.
               </p>
             </div>
           </div>
         </motion.div>
 
+        {/* Salary Comparison */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 14 }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}
         >
           {[
-            { title: "Regular Electrician", salary: "$45–55/hr", note: "Journeyman. Great career. Solid life." },
-            { title: "Tech-Hybrid Electrician", salary: "$60–80/hr", note: "You. Industrial automation. PLC systems. Chip fab infrastructure." },
-            { title: "Electrical Engineer (CS grad)", salary: "$40/hr entry level", note: "Needs a 4-year degree, job hunting, competition with hundreds." },
+            { title: "Regular Electrician", salary: "$45-55/hr", note: "Journeyman. Great career. Solid life.", highlight: false },
+            { title: "Tech-Hybrid Electrician", salary: "$60-80/hr", note: "You. Industrial automation. PLC systems. Chip fab infrastructure.", highlight: true },
+            { title: "CS Grad (Entry)", salary: "$40/hr entry", note: "Needs 4-year degree, job hunting, competing with hundreds.", highlight: false },
           ].map((item, i) => (
             <div key={i} style={{
-              background: i === 1 ? "linear-gradient(135deg, #0f0c00, #0c0c14)" : "#141414",
-              border: i === 1 ? "1px solid rgba(255,215,0,0.25)" : "1px solid #252525",
-              borderRadius: 12,
-              padding: "18px 20px",
+              background: "#3d2b1f",
+              border: item.highlight ? "2px solid #ffcc44" : "2px solid #8b6914",
+              borderRadius: 2,
+              padding: "14px 16px",
+              boxShadow: item.highlight ? "0 0 20px rgba(255,204,68,0.1)" : "none",
             }}>
-              <div style={{ fontSize: 14, fontWeight: 700, color: i === 1 ? "#FFD700" : "#ccc", marginBottom: 6 }}>{item.title}</div>
-              <div style={{ fontSize: 18, fontWeight: 900, color: i === 1 ? "#FFD700" : "#FF6B00", marginBottom: 6 }}>{item.salary}</div>
-              <div style={{ fontSize: 12, color: "#555" }}>{item.note}</div>
+              <div style={{
+                fontFamily: "var(--font-osrs), monospace",
+                fontSize: 7,
+                color: item.highlight ? "#ffcc44" : "#c8a96e",
+                marginBottom: 6,
+              }}>
+                {item.title}
+              </div>
+              <div style={{
+                fontFamily: "var(--font-osrs), monospace",
+                fontSize: 11,
+                color: item.highlight ? "#ffcc44" : "#4caf50",
+                marginBottom: 8,
+              }}>
+                {item.salary}
+              </div>
+              <div style={{
+                fontFamily: "Georgia, serif",
+                fontSize: 10,
+                color: "#8b6914",
+                lineHeight: 1.5,
+              }}>
+                {item.note}
+              </div>
             </div>
           ))}
         </motion.div>

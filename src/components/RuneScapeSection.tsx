@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
 
-// Real OSRS skill icons from the wiki
 const WIKI = "https://oldschool.runescape.wiki/images";
 
 const allSkills = [
@@ -35,29 +34,29 @@ const allSkills = [
 
 const apprenticeLevels = [
   {
-    year: 1, levelRange: "1–20", pct: 40, hourly: "$19–22/hr",
+    year: 1, levelRange: "1-20", pct: 40, hourly: "$19-22/hr",
     task: "Conduit bending, safety, basic wiring, tools. Circle K paid $13.50. This pays $20.",
-    xp: "0 – 302,288",
+    xp: "0 - 302,288",
   },
   {
-    year: 2, levelRange: "21–40", pct: 50, hourly: "$24–27/hr",
+    year: 2, levelRange: "21-40", pct: 50, hourly: "$24-27/hr",
     task: "Residential panels, circuit breakers, blueprints. You actually know stuff now.",
-    xp: "302,288 – 1,210,421",
+    xp: "302,288 - 1,210,421",
   },
   {
-    year: 3, levelRange: "41–60", pct: 60, hourly: "$29–33/hr",
+    year: 3, levelRange: "41-60", pct: 60, hourly: "$29-33/hr",
     task: "Commercial builds, 3-phase power, motor controls. TSMC-level work starts here.",
-    xp: "1,210,421 – 4,053,000",
+    xp: "1,210,421 - 4,053,000",
   },
   {
-    year: 4, levelRange: "61–80", pct: 70, hourly: "$34–38/hr",
+    year: 4, levelRange: "61-80", pct: 70, hourly: "$34-38/hr",
     task: "Industrial installations, transformers, switchgear. The jobs with prestige.",
-    xp: "4,053,000 – 8,944,000",
+    xp: "4,053,000 - 8,944,000",
   },
   {
-    year: 5, levelRange: "81–99", pct: 100, hourly: "$45–55/hr",
+    year: 5, levelRange: "81-99", pct: 100, hourly: "$45-55/hr",
     task: "JOURNEYMAN. Max Cape. Lead crews. $100K+ per year. Union pension. For life.",
-    xp: "8,944,000 – 13,034,431",
+    xp: "8,944,000 - 13,034,431",
   },
 ];
 
@@ -71,47 +70,44 @@ function OSRSSkillCell({ skill, inView }: { skill: typeof allSkills[0]; inView: 
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 3,
-        padding: "6px 4px",
-        borderRadius: 3,
-        background: skill.highlight ? "rgba(255,215,0,0.12)" : "transparent",
-        border: skill.highlight ? "1px solid rgba(255,215,0,0.5)" : "1px solid transparent",
-        cursor: skill.highlight ? "pointer" : "default",
-        transition: "all 0.2s",
+        gap: 2,
+        padding: "4px",
+        borderRadius: 2,
+        background: skill.highlight ? "rgba(255,204,68,0.15)" : "transparent",
+        border: skill.highlight ? "1px solid rgba(255,204,68,0.5)" : "1px solid transparent",
         position: "relative",
       }}
     >
       {skill.highlight && (
         <div style={{
           position: "absolute",
-          top: -8,
+          top: -10,
           left: "50%",
           transform: "translateX(-50%)",
-          background: "#FFD700",
-          color: "#000",
-          fontSize: 7,
+          background: "#ffcc44",
+          color: "#1a0f05",
+          fontSize: 6,
+          fontFamily: "var(--font-osrs), monospace",
           fontWeight: 700,
-          padding: "1px 5px",
-          borderRadius: 2,
+          padding: "1px 4px",
+          borderRadius: 1,
           whiteSpace: "nowrap",
-          fontFamily: "monospace",
         }}>
-          ← YOU
+          YOU
         </div>
       )}
       <Image
         src={skill.icon}
         alt={skill.name}
-        width={25}
-        height={25}
+        width={20}
+        height={20}
         style={{ imageRendering: "pixelated" }}
         unoptimized
       />
       <span style={{
-        fontSize: 9,
-        fontFamily: "var(--font-osrs), 'Courier New', monospace",
-        color: skill.highlight ? "#FFD700" : "#ffcc44",
-        fontWeight: 400,
+        fontSize: 8,
+        fontFamily: "var(--font-osrs), monospace",
+        color: skill.highlight ? "#ffcc44" : "#c8a96e",
         lineHeight: 1,
       }}>
         {skill.highlight ? "1" : skill.level}
@@ -129,51 +125,82 @@ export default function RuneScapeSection() {
 
   return (
     <section style={{
-      background: "linear-gradient(180deg, #0D0D0D, #0a0800, #0D0D0D)",
-      padding: "70px 20px",
-      borderTop: "1px solid #252525",
-      borderBottom: "1px solid #252525",
+      background: "#1a0d05",
+      padding: "60px 20px",
+      borderTop: "2px solid #8b6914",
+      borderBottom: "2px solid #8b6914",
     }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }} ref={ref}>
+      <div style={{ maxWidth: 900, margin: "0 auto" }} ref={ref}>
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: 48 }}
+          style={{
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
+            marginBottom: 24,
+            boxShadow: "0 0 0 1px #2a1f0e, inset 0 1px 0 rgba(200,169,110,0.1)",
+          }}
         >
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#FF6B00", marginBottom: 8 }}>
-            The Core Mechanic
+          <div style={{
+            background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+            borderBottom: "1px solid #8b6914",
+            padding: "8px 12px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 10,
+          }}>
+            <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={20} height={20} unoptimized style={{ imageRendering: "pixelated" }} />
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 10,
+              color: "#ffcc44",
+              letterSpacing: 1,
+            }}>
+              Skills Tab
+            </span>
           </div>
-          <h2 style={{ fontSize: "clamp(24px, 4vw, 40px)", fontWeight: 900, marginBottom: 12 }}>
-            This Is Literally a{" "}
-            <span style={{ color: "#FFD700" }}>Skill Grind</span>
-          </h2>
-          <p style={{ color: "#777", fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
-            You know this screen. You&apos;ve stared at it for hundreds of hours.
-            The IBEW apprenticeship runs the exact same engine — log hours, level up automatically.
-          </p>
+          <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
+            <h2 style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: "clamp(10px, 2vw, 14px)",
+              color: "#ffcc44",
+              marginBottom: 10,
+            }}>
+              This Is Literally a Skill Grind
+            </h2>
+            <p style={{
+              fontFamily: "Georgia, serif",
+              fontSize: 14,
+              color: "#c8a96e",
+              lineHeight: 1.6,
+            }}>
+              You know this screen. You&apos;ve stared at it for hundreds of hours.
+              The IBEW apprenticeship runs the exact same engine - log hours, level up automatically.
+            </p>
+          </div>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24, alignItems: "start" }}>
-
-          {/* ── OSRS Skills Panel ── */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, alignItems: "start" }}>
+          {/* Skills Panel */}
           <motion.div
             ref={panelRef}
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            {/* OSRS panel chrome */}
             <div style={{
               background: "#3d2b1f",
               border: "2px solid #8b6914",
-              borderRadius: 4,
+              borderRadius: 2,
               overflow: "hidden",
-              boxShadow: "0 0 0 1px #2a1f0e, 0 8px 32px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,200,50,0.15)",
-              maxWidth: 320,
+              boxShadow: "0 0 0 1px #2a1f0e, 0 8px 32px rgba(0,0,0,0.8)",
+              maxWidth: 280,
               margin: "0 auto",
             }}>
-              {/* Title bar */}
               <div style={{
                 background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
                 borderBottom: "1px solid #8b6914",
@@ -183,35 +210,28 @@ export default function RuneScapeSection() {
                 justifyContent: "center",
                 gap: 8,
               }}>
-                <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
+                <Image src={`${WIKI}/Skills_icon.png`} alt="Skills" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
                 <span style={{
-                  fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                  fontSize: 9,
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 8,
                   color: "#ffcc44",
-                  letterSpacing: 1,
                 }}>
                   Skills
                 </span>
               </div>
 
-              {/* Skills grid */}
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 2,
-                padding: "8px",
+                padding: "6px",
                 background: "#2e1f0e",
               }}>
-                {allSkills.map((skill, i) => (
-                  <OSRSSkillCell
-                    key={skill.name}
-                    skill={skill}
-                    inView={panelInView}
-                  />
+                {allSkills.map((skill) => (
+                  <OSRSSkillCell key={skill.name} skill={skill} inView={panelInView} />
                 ))}
               </div>
 
-              {/* Total level bar */}
               <div style={{
                 background: "linear-gradient(180deg, #3d2b1f, #2e1f0e)",
                 borderTop: "1px solid #5a3a1a",
@@ -219,8 +239,8 @@ export default function RuneScapeSection() {
                 textAlign: "center",
               }}>
                 <span style={{
-                  fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                  fontSize: 8,
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 7,
                   color: "#ffcc44",
                 }}>
                   Total level: 1,257
@@ -230,38 +250,39 @@ export default function RuneScapeSection() {
 
             {/* Caption */}
             <div style={{
-              textAlign: "center",
-              marginTop: 14,
-              padding: "12px 16px",
-              background: "rgba(255,215,0,0.05)",
-              border: "1px solid rgba(255,215,0,0.15)",
-              borderRadius: 10,
-              fontSize: 13,
-              color: "#aaa",
-              maxWidth: 320,
-              margin: "14px auto 0",
+              marginTop: 12,
+              padding: "10px 14px",
+              background: "#3d2b1f",
+              border: "2px solid #8b6914",
+              borderRadius: 2,
+              maxWidth: 280,
+              margin: "12px auto 0",
             }}>
-              <span style={{ color: "#FFD700", fontWeight: 700 }}>Construction = Lvl 1.</span>{" "}
-              That&apos;s where you start. But every year you show up, the level goes up automatically.
-              It&apos;s written into the union contract.
+              <p style={{
+                fontFamily: "Georgia, serif",
+                fontSize: 12,
+                color: "#c8a96e",
+                textAlign: "center",
+                lineHeight: 1.6,
+              }}>
+                <span style={{ color: "#ffcc44" }}>Construction = Lvl 1.</span> That&apos;s where you start. But every year you show up, the level goes up automatically. It&apos;s written into the union contract.
+              </p>
             </div>
           </motion.div>
 
-          {/* ── XP Progress panel ── */}
+          {/* XP Progress Panel */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Authentic OSRS XP tracker panel */}
             <div style={{
               background: "#3d2b1f",
               border: "2px solid #8b6914",
-              borderRadius: 4,
+              borderRadius: 2,
               overflow: "hidden",
               boxShadow: "0 0 0 1px #2a1f0e, 0 8px 32px rgba(0,0,0,0.8)",
             }}>
-              {/* Header */}
               <div style={{
                 background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
                 borderBottom: "1px solid #8b6914",
@@ -270,34 +291,30 @@ export default function RuneScapeSection() {
                 alignItems: "center",
                 gap: 8,
               }}>
-                <Image src={`${WIKI}/Construction_icon.png`} alt="Construction" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
+                <Image src={`${WIKI}/Construction_icon.png`} alt="Construction" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
                 <span style={{
-                  fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                  fontSize: 8,
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 7,
                   color: "#ffcc44",
-                  letterSpacing: 1,
                 }}>
-                  Electrician — The 5-Year Grind
+                  Electrician - The 5-Year Grind
                 </span>
               </div>
 
-              <div style={{ padding: "14px 14px", background: "#2e1f0e" }}>
+              <div style={{ padding: "12px", background: "#2e1f0e" }}>
                 {/* Skill description */}
                 <div style={{
-                  fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                  fontSize: 7,
+                  fontFamily: "Georgia, serif",
+                  fontSize: 11,
                   color: "#c8a96e",
-                  lineHeight: 1.9,
+                  lineHeight: 1.7,
                   marginBottom: 14,
                   padding: "8px 10px",
-                  background: "#231708",
-                  border: "1px solid #5a3a1a",
-                  borderRadius: 3,
+                  background: "#1a0f05",
+                  border: "1px solid #3d2b1f",
+                  borderRadius: 2,
                 }}>
-                  The Electrician skill scales with hours logged,
-                  not raw intelligence. High Work Ethic &amp; Consistency
-                  stats grant double XP. Level 99 grants the Journeyman
-                  title and unlocks the highest-paying job sites in AZ.
+                  The Electrician skill scales with hours logged, not raw intelligence. High Work Ethic &amp; Consistency stats grant double XP. Level 99 grants the Journeyman title and unlocks the highest-paying job sites in AZ.
                 </div>
 
                 {/* Level bars */}
@@ -306,42 +323,41 @@ export default function RuneScapeSection() {
                     key={lvl.year}
                     onClick={() => setActiveYear(activeYear === i ? null : i)}
                     style={{
-                      marginBottom: 10,
+                      marginBottom: 8,
                       cursor: "pointer",
-                      padding: "8px 10px",
-                      borderRadius: 3,
-                      background: activeYear === i ? "rgba(255,204,68,0.06)" : "transparent",
+                      padding: "6px 8px",
+                      borderRadius: 2,
+                      background: activeYear === i ? "rgba(255,204,68,0.08)" : "transparent",
                       border: activeYear === i ? "1px solid rgba(139,105,20,0.5)" : "1px solid transparent",
                       transition: "all 0.2s",
                     }}
                   >
-                    {/* Level label row */}
                     <div style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      marginBottom: 5,
+                      marginBottom: 4,
                     }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                         <Image src={`${WIKI}/Construction_icon.png`} alt="" width={12} height={12} unoptimized style={{ imageRendering: "pixelated" }} />
                         <span style={{
-                          fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                          fontSize: 7,
-                          color: lvl.pct >= 100 ? "#FFD700" : "#c8a96e",
+                          fontFamily: "var(--font-osrs), monospace",
+                          fontSize: 6,
+                          color: lvl.pct >= 100 ? "#ffcc44" : "#c8a96e",
                         }}>
-                          Year {lvl.year}  Lvl {lvl.levelRange}
+                          Year {lvl.year} Lvl {lvl.levelRange}
                         </span>
                       </div>
                       <span style={{
-                        fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                        fontSize: 7,
-                        color: lvl.pct >= 100 ? "#FFD700" : "#4caf50",
+                        fontFamily: "var(--font-osrs), monospace",
+                        fontSize: 6,
+                        color: lvl.pct >= 100 ? "#ffcc44" : "#4caf50",
                       }}>
                         {lvl.hourly}
                       </span>
                     </div>
 
-                    {/* XP bar — authentic OSRS green */}
+                    {/* XP bar */}
                     <div style={{
                       background: "#1a0f05",
                       border: "1px solid #3d2b1f",
@@ -379,16 +395,15 @@ export default function RuneScapeSection() {
                           />
                         )}
                       </motion.div>
-                      {/* XP text overlay */}
                       <div style={{
                         position: "absolute",
                         inset: 0,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                        fontSize: 6,
-                        color: "rgba(255,255,255,0.7)",
+                        fontFamily: "var(--font-osrs), monospace",
+                        fontSize: 5,
+                        color: "rgba(255,255,255,0.6)",
                         pointerEvents: "none",
                       }}>
                         {lvl.xp} xp
@@ -403,15 +418,15 @@ export default function RuneScapeSection() {
                         transition={{ duration: 0.25 }}
                         style={{
                           marginTop: 8,
-                          fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                          fontSize: 7,
+                          fontFamily: "Georgia, serif",
+                          fontSize: 11,
                           color: "#c8a96e",
-                          lineHeight: 1.8,
+                          lineHeight: 1.6,
                           paddingTop: 8,
                           borderTop: "1px solid #3d2b1f",
                         }}
                       >
-                        &gt; {lvl.task}
+                        {lvl.task}
                       </motion.div>
                     )}
                   </div>
@@ -425,19 +440,19 @@ export default function RuneScapeSection() {
                   style={{
                     marginTop: 12,
                     padding: "10px 12px",
-                    background: "#231708",
+                    background: "#1a0f05",
                     border: "1px solid rgba(255,204,68,0.4)",
-                    borderRadius: 3,
+                    borderRadius: 2,
                     textAlign: "center",
                   }}
                 >
                   <div style={{
-                    fontFamily: "var(--font-osrs), 'Courier New', monospace",
+                    fontFamily: "var(--font-osrs), monospace",
                     fontSize: 7,
-                    color: "#FFD700",
+                    color: "#ffcc44",
                     lineHeight: 2,
                   }}>
-                    🏆 Congratulations! You have achieved<br />
+                    Congratulations! You have achieved<br />
                     level 99 in Electrician!<br />
                     <span style={{ color: "#4caf50" }}>
                       Journeyman Wireman title unlocked.
@@ -446,7 +461,6 @@ export default function RuneScapeSection() {
                 </motion.div>
               </div>
 
-              {/* Footer */}
               <div style={{
                 background: "linear-gradient(180deg, #3d2b1f, #2e1f0e)",
                 borderTop: "1px solid #5a3a1a",
@@ -454,8 +468,8 @@ export default function RuneScapeSection() {
                 textAlign: "center",
               }}>
                 <span style={{
-                  fontFamily: "var(--font-osrs), 'Courier New', monospace",
-                  fontSize: 7,
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 6,
                   color: "#8b6914",
                 }}>
                   Click each year to see what you unlock
@@ -471,19 +485,22 @@ export default function RuneScapeSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           style={{
+            marginTop: 24,
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
+            padding: "14px 18px",
             textAlign: "center",
-            marginTop: 28,
-            padding: "20px 28px",
-            background: "rgba(255,107,0,0.05)",
-            border: "1px solid rgba(255,107,0,0.15)",
-            borderRadius: 12,
-            fontSize: 15,
-            color: "#aaa",
           }}
         >
-          <span style={{ color: "#FF6B00", fontWeight: 700 }}>The difference from RuneScape?</span>{" "}
-          Every level-up also increases your hourly wage — written into the union contract.
-          You literally cannot be denied it. Show up. Log hours. Level up. Get paid more.
+          <p style={{
+            fontFamily: "Georgia, serif",
+            fontSize: 14,
+            color: "#c8a96e",
+            lineHeight: 1.7,
+          }}>
+            <span style={{ color: "#ffcc44" }}>The difference from RuneScape?</span> Every level-up also increases your hourly wage - written into the union contract. You literally cannot be denied it. Show up. Log hours. Level up. Get paid more.
+          </p>
         </motion.div>
       </div>
     </section>

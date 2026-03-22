@@ -2,9 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+
+const WIKI = "https://oldschool.runescape.wiki/images";
 
 const links = [
-  { label: "⭐ Apply to PEJATC (IBEW 640)", url: "https://secure2.tradeschoolinc.com/v5/pejatc-org/login/accountCreate.php", primary: true },
+  { label: "Apply to PEJATC (IBEW 640)", url: "https://secure2.tradeschoolinc.com/v5/pejatc-org/login/accountCreate.php", primary: true },
   { label: "PEJATC Requirements", url: "https://pejatc.org/how-to-apply/", primary: false },
   { label: "IEC Arizona (Non-Union)", url: "https://iecaz.org/apprenticeship", primary: false },
   { label: "City of Phoenix Apprentice", url: "https://www.phoenix.gov/administration/departments/hr/careers/apprenticeships/electrician-apprentice.html", primary: false },
@@ -22,94 +25,215 @@ export default function ApplyNow() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section style={{ padding: "70px 20px 90px", maxWidth: 800, margin: "0 auto" }} ref={ref}>
+    <section style={{ padding: "60px 20px 80px", maxWidth: 800, margin: "0 auto" }} ref={ref}>
+      {/* Section Header - Bank Style */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        style={{ textAlign: "center", marginBottom: 44 }}
+        style={{
+          background: "#3d2b1f",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          marginBottom: 20,
+          boxShadow: "0 0 0 1px #2a1f0e, inset 0 1px 0 rgba(200,169,110,0.1)",
+        }}
       >
-        <div style={{ fontSize: 48, marginBottom: 16 }}>⚡</div>
-        <h2 style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 900, marginBottom: 12 }}>
-          Ready to <span style={{ color: "#FFD700" }}>Level Up</span>?
-        </h2>
-        <p style={{ color: "#777", fontSize: 16, maxWidth: 560, margin: "0 auto", lineHeight: 1.7 }}>
-          Every link you need is right here. Start with the PEJATC application — that&apos;s
-          the main quest. Everything else is side quests that boost your odds.
-        </p>
+        <div style={{
+          background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+          borderBottom: "1px solid #8b6914",
+          padding: "8px 12px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+        }}>
+          <Image src={`${WIKI}/Coins_10000.png`} alt="Bank" width={20} height={20} unoptimized style={{ imageRendering: "pixelated" }} />
+          <span style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: 10,
+            color: "#ffcc44",
+            letterSpacing: 1,
+          }}>
+            Bank
+          </span>
+        </div>
+        <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
+          <h2 style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: "clamp(10px, 2vw, 14px)",
+            color: "#ffcc44",
+            marginBottom: 10,
+          }}>
+            Your Rewards Await
+          </h2>
+          <p style={{
+            fontFamily: "Georgia, serif",
+            fontSize: 14,
+            color: "#c8a96e",
+            lineHeight: 1.6,
+          }}>
+            Every link you need is right here. Start with the PEJATC application - that&apos;s the main quest. Everything else is side quests that boost your odds.
+          </p>
+        </div>
       </motion.div>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-        gap: 10,
-        marginBottom: 36,
-      }}>
-        {links.map((link, i) => (
-          <motion.a
-            key={link.url}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 10 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.1 + i * 0.04 }}
-            whileHover={{ scale: 0.98 }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "14px 18px",
-              borderRadius: 10,
-              fontSize: 13,
-              fontWeight: 600,
-              textDecoration: "none",
-              textAlign: "center",
-              background: link.primary ? "#FFD700" : "#141414",
-              color: link.primary ? "#000" : "#ccc",
-              border: link.primary ? "none" : "1px solid #252525",
-              gridColumn: link.primary ? "1 / -1" : "auto",
-              transition: "border-color 0.2s",
-            }}
-          >
-            {link.label} →
-          </motion.a>
-        ))}
-      </div>
-
-      {/* Final message */}
+      {/* Bank Slots Grid */}
       <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          background: "#3d2b1f",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          padding: "14px",
+          marginBottom: 20,
+          boxShadow: "0 0 0 1px #2a1f0e, 0 4px 20px rgba(0,0,0,0.6)",
+        }}
+      >
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+          gap: 8,
+        }}>
+          {links.map((link, i) => (
+            <motion.a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.3, delay: 0.1 + i * 0.03 }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px 12px",
+                borderRadius: 2,
+                fontFamily: "var(--font-osrs), monospace",
+                fontSize: 6,
+                textDecoration: "none",
+                textAlign: "center",
+                background: link.primary
+                  ? "linear-gradient(180deg, #ffcc44, #c8a96e)"
+                  : "#1a0f05",
+                color: link.primary ? "#1a0f05" : "#c8a96e",
+                border: link.primary
+                  ? "2px solid #ffcc44"
+                  : "1px solid #3d2b1f",
+                boxShadow: link.primary
+                  ? "0 0 15px rgba(255,204,68,0.3)"
+                  : "none",
+                gridColumn: link.primary ? "1 / -1" : "auto",
+                transition: "all 0.2s",
+              }}
+            >
+              {link.primary && (
+                <Image
+                  src={`${WIKI}/Quest_point_icon.png`}
+                  alt=""
+                  width={14}
+                  height={14}
+                  unoptimized
+                  style={{ imageRendering: "pixelated", marginRight: 8 }}
+                />
+              )}
+              {link.label}
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Withdraw All Button */}
+      <motion.a
+        href="https://secure2.tradeschoolinc.com/v5/pejatc-org/login/accountCreate.php"
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.5 }}
         style={{
+          display: "block",
+          background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          padding: "14px 20px",
           textAlign: "center",
-          padding: "32px 28px",
-          background: "linear-gradient(135deg, #0c0c00, #0a0600)",
-          border: "1px solid rgba(255,215,0,0.15)",
-          borderRadius: 16,
-          boxShadow: "0 0 40px rgba(255,215,0,0.04)",
+          textDecoration: "none",
+          marginBottom: 24,
+          boxShadow: "0 0 0 1px #2a1f0e",
         }}
       >
-        <div style={{ fontSize: 32, marginBottom: 14 }}>🔱</div>
-        <p style={{ fontSize: 18, fontWeight: 700, color: "#FFD700", lineHeight: 1.6, marginBottom: 14 }}>
+        <span style={{
+          fontFamily: "var(--font-osrs), monospace",
+          fontSize: 10,
+          color: "#ffcc44",
+        }}>
+          WITHDRAW ALL - Start Your Journey
+        </span>
+      </motion.a>
+
+      {/* Final Message */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        style={{
+          background: "#3d2b1f",
+          border: "2px solid rgba(255,204,68,0.4)",
+          borderRadius: 2,
+          padding: "20px",
+          textAlign: "center",
+          boxShadow: "0 0 30px rgba(255,204,68,0.05)",
+        }}
+      >
+        <Image
+          src={`${WIKI}/Max_cape.png`}
+          alt="Max Cape"
+          width={32}
+          height={32}
+          unoptimized
+          style={{ imageRendering: "pixelated", marginBottom: 14 }}
+        />
+        <p style={{
+          fontFamily: "Georgia, serif",
+          fontSize: 16,
+          color: "#ffcc44",
+          lineHeight: 1.6,
+          fontStyle: "italic",
+          marginBottom: 14,
+        }}>
           &quot;If you can grind to 99, you can grind to Journeyman.&quot;
         </p>
-        <p style={{ fontSize: 14, color: "#888", lineHeight: 1.7, maxWidth: 500, margin: "0 auto" }}>
+        <p style={{
+          fontFamily: "Georgia, serif",
+          fontSize: 13,
+          color: "#c8a96e",
+          lineHeight: 1.7,
+          maxWidth: 500,
+          margin: "0 auto",
+        }}>
           This page was built specifically for you, Shayaan. Not a template.
           Not a generic career guide. Every word was chosen because someone believes
           in you enough to put in the work.
         </p>
-        <p style={{ fontSize: 14, color: "#555", marginTop: 14 }}>
-          Arizona needs you. The grind starts now. ⚡
+        <p style={{
+          fontFamily: "var(--font-osrs), monospace",
+          fontSize: 8,
+          color: "#8b6914",
+          marginTop: 16,
+        }}>
+          Arizona needs you. The grind starts now.
         </p>
         <div style={{
           marginTop: 20,
-          fontSize: 11,
-          fontFamily: "monospace",
-          color: "#333",
+          fontFamily: "var(--font-osrs), monospace",
+          fontSize: 6,
+          color: "#3d2b1f",
         }}>
-          Built with 🔱 by Shopto · March 2026 · Links verified March 2026
+          Built by Shopto | March 2026 | Links verified March 2026
         </div>
       </motion.div>
     </section>

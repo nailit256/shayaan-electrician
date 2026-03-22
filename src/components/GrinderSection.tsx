@@ -2,80 +2,176 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+
+const WIKI = "https://oldschool.runescape.wiki/images";
 
 export default function GrinderSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section style={{ padding: "70px 20px", maxWidth: 900, margin: "0 auto" }} ref={ref}>
+    <section style={{ padding: "60px 20px", maxWidth: 900, margin: "0 auto" }} ref={ref}>
+      {/* Section Header - Hiscores Style */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        style={{ textAlign: "center", marginBottom: 44 }}
+        style={{
+          background: "#3d2b1f",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          marginBottom: 20,
+          boxShadow: "0 0 0 1px #2a1f0e, inset 0 1px 0 rgba(200,169,110,0.1)",
+        }}
       >
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#FF6B00", marginBottom: 8 }}>
-          Your Superpower
+        <div style={{
+          background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+          borderBottom: "1px solid #8b6914",
+          padding: "8px 12px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+        }}>
+          <Image src={`${WIKI}/Combat_icon.png`} alt="Combat" width={20} height={20} unoptimized style={{ imageRendering: "pixelated" }} />
+          <span style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: 10,
+            color: "#ffcc44",
+            letterSpacing: 1,
+          }}>
+            Hiscores
+          </span>
         </div>
-        <h2 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 900, marginBottom: 8 }}>
-          The Grinder Always Wins 💪
-        </h2>
-        <p style={{ color: "#777", fontSize: 15 }}>
-          CS punishes anyone who isn&apos;t a genius. The trades reward the grinder.
-          Always have. Always will.
-        </p>
+        <div style={{ padding: "14px 18px", background: "#2e1f0e", textAlign: "center" }}>
+          <h2 style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: "clamp(10px, 2vw, 14px)",
+            color: "#ffcc44",
+            marginBottom: 10,
+          }}>
+            The Grinder Always Wins
+          </h2>
+          <p style={{
+            fontFamily: "Georgia, serif",
+            fontSize: 14,
+            color: "#c8a96e",
+            lineHeight: 1.6,
+          }}>
+            CS punishes anyone who isn&apos;t a genius. The trades reward the grinder. Always have. Always will.
+          </p>
+        </div>
       </motion.div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, marginBottom: 28 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 20 }}>
+        {/* CS Job Market */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
           style={{
-            background: "#0e0008",
-            border: "1px solid rgba(239,68,68,0.2)",
-            borderRadius: 16,
-            padding: 28,
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
+            overflow: "hidden",
+            boxShadow: "0 0 0 1px #2a1f0e, 0 4px 20px rgba(0,0,0,0.6)",
           }}
         >
-          <h3 style={{ fontSize: 18, fontWeight: 800, color: "#ef4444", marginBottom: 16 }}>
-            💻 CS Job Market
-          </h3>
-          <ul style={{ listStyle: "none", padding: 0, fontSize: 14, color: "#888", lineHeight: 2.2 }}>
+          <div style={{
+            background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+            borderBottom: "1px solid #8b6914",
+            padding: "8px 12px",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}>
+            <Image src={`${WIKI}/Magic_icon.png`} alt="CS" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 8,
+              color: "#cc3333",
+            }}>
+              CS Job Market
+            </span>
+          </div>
+
+          <div style={{ padding: "12px", background: "#2e1f0e" }}>
             {[
               "Rewards 10x developers and Stanford PhDs",
               "LeetCode grind for every interview",
               "Competing against thousands of CS grads",
               "AI is eating entry-level coding jobs right now",
-              "2.5 year job hunts are the new normal (see: Shakib)",
-              "Salary negotiation is on you — no contract",
+              "2.5 year job hunts are the new normal",
+              "Salary negotiation is on you - no contract",
               "Can be laid off any time without notice",
-            ].map((item) => (
-              <li key={item} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                <span style={{ color: "#ef4444", flexShrink: 0, marginTop: 2 }}>✗</span>
-                <span>{item}</span>
-              </li>
+            ].map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, x: -10 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
+                style={{
+                  display: "flex",
+                  gap: 8,
+                  alignItems: "flex-start",
+                  padding: "6px 0",
+                  borderBottom: i < 6 ? "1px solid #3d2b1f" : "none",
+                }}
+              >
+                <span style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 8,
+                  color: "#cc3333",
+                  flexShrink: 0,
+                }}>
+                  X
+                </span>
+                <span style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: 11,
+                  color: "#c8a96e",
+                  lineHeight: 1.5,
+                }}>
+                  {item}
+                </span>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
 
+        {/* The Trades */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
           style={{
-            background: "#081000",
-            border: "1px solid rgba(34,197,94,0.2)",
-            borderRadius: 16,
-            padding: 28,
-            boxShadow: "0 0 20px rgba(34,197,94,0.03)",
+            background: "#3d2b1f",
+            border: "2px solid #8b6914",
+            borderRadius: 2,
+            overflow: "hidden",
+            boxShadow: "0 0 0 1px #2a1f0e, 0 4px 20px rgba(0,0,0,0.6), 0 0 30px rgba(76,175,80,0.05)",
           }}
         >
-          <h3 style={{ fontSize: 18, fontWeight: 800, color: "#22c55e", marginBottom: 16 }}>
-            ⚡ The Trades
-          </h3>
-          <ul style={{ listStyle: "none", padding: 0, fontSize: 14, color: "#888", lineHeight: 2.2 }}>
+          <div style={{
+            background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+            borderBottom: "1px solid #8b6914",
+            padding: "8px 12px",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}>
+            <Image src={`${WIKI}/Smithing_icon.png`} alt="Trades" width={16} height={16} unoptimized style={{ imageRendering: "pixelated" }} />
+            <span style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 8,
+              color: "#4caf50",
+            }}>
+              The Trades
+            </span>
+          </div>
+
+          <div style={{ padding: "12px", background: "#2e1f0e" }}>
             {[
               "Rewards showing up and doing the work",
               "No LeetCode. No whiteboard. No ego.",
@@ -83,65 +179,191 @@ export default function GrinderSection() {
               "AI cannot wire a building. Ever.",
               "Pay raises are AUTOMATIC per union contract",
               "Cannot be denied a raise. Cannot be passed over.",
-              "Cannot be outsourced to India or replaced by a bot",
-            ].map((item) => (
-              <li key={item} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                <span style={{ color: "#22c55e", flexShrink: 0, marginTop: 2 }}>✓</span>
-                <span>{item}</span>
-              </li>
+              "Cannot be outsourced or replaced by a bot",
+            ].map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, x: 10 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
+                style={{
+                  display: "flex",
+                  gap: 8,
+                  alignItems: "flex-start",
+                  padding: "6px 0",
+                  borderBottom: i < 6 ? "1px solid #3d2b1f" : "none",
+                }}
+              >
+                <span style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 8,
+                  color: "#4caf50",
+                  flexShrink: 0,
+                }}>
+                  +
+                </span>
+                <span style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: 11,
+                  color: "#c8a96e",
+                  lineHeight: 1.5,
+                }}>
+                  {item}
+                </span>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
       </div>
 
-      {/* Basketball analogy */}
+      {/* Hiscores Comparison Table */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.45 }}
         style={{
-          background: "#0a0a14",
-          border: "1px solid #1a1a2a",
-          borderRadius: 14,
-          padding: "24px 28px",
+          background: "#3d2b1f",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          overflow: "hidden",
+          marginBottom: 16,
+          boxShadow: "0 0 0 1px #2a1f0e",
+        }}
+      >
+        <div style={{
+          background: "linear-gradient(180deg, #5a3a1a, #3d2b1f)",
+          borderBottom: "1px solid #8b6914",
+          padding: "8px 12px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 8,
+        }}>
+          <Image src={`${WIKI}/Combat_icon.png`} alt="Hiscores" width={14} height={14} unoptimized style={{ imageRendering: "pixelated" }} />
+          <span style={{
+            fontFamily: "var(--font-osrs), monospace",
+            fontSize: 8,
+            color: "#ffcc44",
+          }}>
+            Hiscores Comparison
+          </span>
+        </div>
+
+        <div style={{ background: "#2e1f0e" }}>
+          {/* Header Row */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            borderBottom: "1px solid #8b6914",
+            background: "#1a0f05",
+          }}>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#8b6914" }}>
+              Skill
+            </div>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#cc3333", textAlign: "center" }}>
+              CS Grad Rank
+            </div>
+            <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 6, color: "#4caf50", textAlign: "center" }}>
+              Electrician Rank
+            </div>
+          </div>
+
+          {/* Data Rows */}
+          {[
+            { skill: "Work Ethic", cs: "#4,521,000", trade: "#1" },
+            { skill: "Consistency", cs: "#3,000,000", trade: "#1" },
+            { skill: "Earning Power (5yr)", cs: "$70K", trade: "$100K+" },
+            { skill: "AI-Proof", cs: "No", trade: "YES" },
+            { skill: "Rejection Risk", cs: "HIGH", trade: "LOW" },
+          ].map((row, i) => (
+            <div key={row.skill} style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              borderBottom: i < 4 ? "1px solid #3d2b1f" : "none",
+            }}>
+              <div style={{ padding: "8px 12px", fontFamily: "Georgia, serif", fontSize: 11, color: "#c8a96e" }}>
+                {row.skill}
+              </div>
+              <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#cc3333", textAlign: "center" }}>
+                {row.cs}
+              </div>
+              <div style={{ padding: "8px 12px", fontFamily: "var(--font-osrs), monospace", fontSize: 8, color: "#4caf50", textAlign: "center" }}>
+                {row.trade}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Phoenix Suns Analogy */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.55 }}
+        style={{
+          background: "#3d2b1f",
+          border: "2px solid #8b6914",
+          borderRadius: 2,
+          padding: "14px 18px",
           marginBottom: 16,
         }}
       >
-        <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-          <div style={{ fontSize: 36, flexShrink: 0 }}>🏀</div>
+        <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+          <Image src={`${WIKI}/Agility_icon.png`} alt="Agility" width={28} height={28} unoptimized style={{ imageRendering: "pixelated", flexShrink: 0 }} />
           <div>
-            <h4 style={{ fontSize: 16, fontWeight: 800, color: "#aaa", marginBottom: 8 }}>
+            <div style={{
+              fontFamily: "var(--font-osrs), monospace",
+              fontSize: 8,
+              color: "#ffcc44",
+              marginBottom: 8,
+            }}>
               Phoenix Suns Analogy
-            </h4>
-            <p style={{ fontSize: 14, color: "#666", lineHeight: 1.7 }}>
+            </div>
+            <p style={{
+              fontFamily: "Georgia, serif",
+              fontSize: 12,
+              color: "#c8a96e",
+              lineHeight: 1.7,
+            }}>
               The Suns need role players just as much as stars. A guy who shows up every game,
-              plays consistent defense, hits his assignments — that player has a job for 10 years.
-              You don&apos;t have to be Kevin Durant. You just have to be the guy who <em>shows up and does the work</em>.
+              plays consistent defense, hits his assignments - that player has a job for 10 years.
+              You don&apos;t have to be Kevin Durant. You just have to be the guy who shows up and does the work.
               The trades are full of those guys making $100K. CS is full of people waiting for a callback.
             </p>
           </div>
         </div>
       </motion.div>
 
-      {/* The grind quote */}
+      {/* Quote */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.55 }}
+        transition={{ duration: 0.6, delay: 0.65 }}
         style={{
+          background: "#3d2b1f",
+          border: "2px solid rgba(255,204,68,0.4)",
+          borderRadius: 2,
+          padding: "20px",
           textAlign: "center",
-          padding: "28px",
-          background: "rgba(255,107,0,0.05)",
-          border: "1px solid rgba(255,107,0,0.15)",
-          borderRadius: 14,
         }}
       >
-        <div style={{ fontSize: 28, marginBottom: 12 }}>⚡</div>
-        <p style={{ fontSize: 18, fontWeight: 700, color: "#ccc", lineHeight: 1.6, fontStyle: "italic" }}>
+        <Image src={`${WIKI}/Strength_icon.png`} alt="Strength" width={28} height={28} unoptimized style={{ imageRendering: "pixelated", marginBottom: 12 }} />
+        <p style={{
+          fontFamily: "Georgia, serif",
+          fontSize: 16,
+          color: "#ffcc44",
+          lineHeight: 1.6,
+          fontStyle: "italic",
+        }}>
           &quot;If you can grind RuneScape to 99,<br />
           you can grind this to Journeyman.&quot;
         </p>
-        <p style={{ fontSize: 13, color: "#555", marginTop: 12 }}>
+        <p style={{
+          fontFamily: "var(--font-osrs), monospace",
+          fontSize: 7,
+          color: "#8b6914",
+          marginTop: 12,
+        }}>
           The only difference is one pays you $45/hr when you max out.
         </p>
       </motion.div>
