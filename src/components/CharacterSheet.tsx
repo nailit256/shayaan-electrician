@@ -175,7 +175,7 @@ export default function CharacterSheet() {
                 padding: 4,
                 textAlign: "center",
               }}>
-                <div style={{ width: 80, height: 100, overflow: "hidden", position: "relative" }}>
+                <div style={{ width: 120, height: 150, overflow: "hidden", position: "relative" }}>
                   <Image
                     src="/shayaan.jpg"
                     alt="Shayaan"
