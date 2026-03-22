@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Press_Start_2P } from "next/font/google";
+
+const pressStart = Press_Start_2P({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-osrs",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Shayaan — Time to Level Up ⚡",
@@ -17,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`antialiased ${pressStart.variable}`}>
         {children}
       </body>
     </html>
