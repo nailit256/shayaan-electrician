@@ -162,6 +162,54 @@ export default function CharacterSheet() {
           </div>
 
           <div style={{ padding: "12px", background: "#2e1f0e" }}>
+            {/* Character Portrait */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: 12,
+            }}>
+              <div style={{
+                background: "#3d2b1f",
+                border: "2px solid #8b6914",
+                borderRadius: 2,
+                padding: 4,
+                textAlign: "center",
+              }}>
+                <Image
+                  src="/shayaan.jpg"
+                  alt="Shayaan"
+                  width={80}
+                  height={80}
+                  style={{ imageRendering: "pixelated", objectFit: "cover", display: "block" }}
+                />
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 7,
+                  color: "#ffcc44",
+                  marginTop: 4,
+                }}>
+                  Shayaan
+                </div>
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 7,
+                  color: "#ffcc44",
+                }}>
+                  Total Level: 1
+                </div>
+                <div style={{
+                  fontFamily: "var(--font-osrs), monospace",
+                  fontSize: 7,
+                  color: "#ffcc44",
+                  maxWidth: 100,
+                  lineHeight: 1.4,
+                  marginTop: 2,
+                }}>
+                  Examine: A young adventurer with max Work Ethic. Currently employed at Circle K.
+                </div>
+              </div>
+            </div>
+
             {/* Warning Box */}
             <div style={{
               background: "#1a0f05",
